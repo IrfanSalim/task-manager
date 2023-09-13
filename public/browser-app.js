@@ -3,6 +3,8 @@ const loadingDOM = document.querySelector('.loading-text')
 const formDOM = document.querySelector('.task-form')
 const taskInputDOM = document.querySelector('.task-input')
 const formAlertDOM = document.querySelector('.form-alert')
+const completedCheck = document.querySelector('#completed-check')
+
 // Load tasks from /api/tasks
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
@@ -25,6 +27,7 @@ const showTasks = async () => {
 
 
 <!-- edit link -->
+<input type="checkbox" id="completed-check" name="completed" style="margin-right:10px">
 <a href="task.html?id=${taskID}"  class="edit-link">
 <i class="fas fa-edit"></i>
 </a>
@@ -61,6 +64,11 @@ tasksDOM.addEventListener('click', async (e) => {
     }
   }
   loadingDOM.style.visibility = 'hidden'
+})
+
+//Completed check
+completedCheck.addEventListener("change", () => {
+
 })
 
 // form
